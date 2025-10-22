@@ -1,0 +1,1556 @@
+/*=========== RESET ==========*/
+body {
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0;
+    padding: 0
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==================================================================================== */
+/* ============================ SMALL DEVICES - CELULARES ============================= */
+/* ==================================================================================== */
+
+@media screen and (min-width:1px) and (max-width:480px) {
+
+    /* ESTILIZÇÃO DO FUNDO DA ÁREA DE LOGIN */
+    .fundo_login {
+        background-image: url('../imagens/banner_fundo3.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        padding: 0 20px
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE LOGIN */
+    .login {
+        width: 60%;
+        margin-top: 20%;
+        margin-left: 15%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.815);
+        /* Sombra para destaque */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centraliza o conteúdo verticalmente */
+        padding: 20px;
+        color: white;
+    }
+
+    .login img {
+        margin-top: 10px;
+        width: 50px;
+        height: 8vh;
+    }
+
+    .login h2 {
+        font-size: 1em;
+        margin: 2%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login h3 {
+        font-size: 0.7em;
+        margin: 1%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login form {
+        margin-top: 2%;
+    }
+
+    .login input {
+        width: 80%;
+        padding: 1%;
+        font-size: 1.3em;
+        color: #003;
+        margin-top: 4%;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 9px 9px 9px 9px;
+        float: center;
+        background-color: #99F;
+    }
+
+    .login button {
+        padding: 2%;
+        font-size: 0.7em;
+        color: #039;
+        cursor: pointer;
+        margin-top: 4%;
+        border-radius: 9px 9px 9px 9px;
+        margin-bottom: 3%;
+        background-color: #FFF;
+    }
+
+    .login button i {
+        display: none;
+    }
+
+    /* DIV PRINCIPAL CONTENDO A IMAGEM DO BANNER" */
+    .banner_principal {
+        height: 180px;
+        background-image: url('../imagens/banner_fundo4.jpg');
+        /* Caminho atualizado da imagem */
+        background-size: cover;
+        background-position: top;
+        /* Agora a imagem ficará alinhada à parte superior */
+        position: relative;
+        padding: 0 20px;
+        /* Espaçamento interno */
+    }
+
+    /* DIV INTERNA COM O TEXTO "Sala de Leitura" */
+    .texto_banner {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        /* Alinha à esquerda */
+        align-items: center;
+        /* Centraliza verticalmente */
+        height: 100%;
+        /* Garante que ocupe toda a altura da outer-div */
+        text-shadow:
+            1px 1px 5px rgb(153, 147, 233),
+            -1px -1px 5px rgb(153, 147, 233);
+    }
+
+    /* DIV INTERNA COM O NOME DO USUÁRIO E O NIVEL DE USUARIO" */
+    .texto2_banner {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(41, 5, 5);
+        text-align: right;
+        /* Alinha o texto à direita */
+        display: flex;
+        flex-direction: column;
+        /* Alinha os textos verticalmente */
+        justify-content: center;
+        /* Centraliza verticalmente */
+        position: absolute;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 0;
+        height: 100%;
+        text-shadow:
+            1px 1px 5px rgb(255, 255, 255),
+            -1px -1px 5px rgb(255, 255, 255);
+    }
+
+    /* DIV INTERNA COM A NAVBAR -  O MENU DE LINKS DO SISTEMA*/
+    .menu {
+        height: 50px;
+        background-color: rgba(26, 35, 126, 0.7);
+        /* Azul transparente com 70% */
+        display: flex;
+        align-items: center;
+        padding: 0;
+        position: absolute;
+        /* Para posicionar dentro da outer-div */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 12px;
+    }
+
+    /* Estilo dos links como abas */
+    .menu a {
+        color: white;
+        text-decoration: none;
+        background-color: rgba(21, 27, 96, 0.9);
+        /* Azul mais escuro */
+        border-radius: 5px 5px 0 0;
+        /* Arredondado no topo para estilo de aba */
+        margin-right: 3px;
+        /* Reduz a margem para aproximar os links */
+        height: 100%;
+        /* Para preencher completamente a altura da navbar */
+        display: flex;
+        align-items: center;
+        /* Centraliza verticalmente o texto */
+        justify-content: center;
+        /* Centraliza horizontalmente o texto */
+        padding: 0 8px;
+        /* Menos espaçamento interno */
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    /* Hover e efeito de clique */
+    .menu a:hover {
+        background-color: rgba(57, 73, 171, 0.8);
+        /* Azul mais claro no hover */
+        transform: translateY(-5px);
+        /* Efeito de elevação */
+    }
+
+    .menu a:active {
+        transform: translateY(0);
+        /* Reseta ao ser clicado */
+    }
+
+    .menu img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+    }
+
+    .menu a span {
+        /* oculta o texto do link */
+        display: none;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE COOKIES NO INICIO */
+    .cookie-consent {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cookie-consent p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .cookie-consent button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .cookie-consent button:hover {
+        background-color: #45a049;
+    }
+
+    /* FORMATAÇÃO DE TABELAS */
+    .lista {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    .lista table,
+    th,
+    td {
+        border: 0px;
+        border-collapse: collapse;
+    }
+
+    .lista td {
+        padding-right: 20px;
+    }
+
+    .lista tr:hover {
+        background-color: coral;
+    }
+
+    .lista tr:nth-child(even) {
+        background-color: #DCEBE6
+    }
+
+    .lista tr:hover:nth-child(1n + 2) {
+        background-color: #085F63;
+        color: #fff
+    }
+
+    .lista span {
+        /*este item é para organizar os textos da direita, a-aluno, p-professor,g-gestor*/
+        font-size: 9px;
+        font-weight: bold;
+        color: rgb(255, 4, 46);
+        text-align: right;
+        /* Alinha o texto à direita */
+        position: fixed;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 190px;
+        display: none;
+    }
+
+    .lista img {
+        width: 18px;
+        /* Tamanho dos ícones */
+        height: 18px;
+        padding-right: 2px;
+    }
+
+    .lista input {
+        /* caixa de busca no banco de dados */
+        width: 100px;
+        margin-right: 15px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #eec0ae;
+        /* Cor de fundo */
+        color: rgb(0, 0, 0);
+        /* Cor do texto */
+        padding: 5px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 12px;
+        /* Tamanho do texto */
+        text-align: left;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    /*LINKS COM FORMATO DE BOTOES ALEATORIOS*/
+    .link {
+        margin-right: 5px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #1c426b;
+        /* Cor de fundo */
+        color: white;
+        /* Cor do texto */
+        padding: 5px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 12px;
+        /* Tamanho do texto */
+        text-align: center;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    .link:hover {
+        background-color: #73a1d3;
+        /* Cor ao passar o mouse */
+    }
+
+    .link img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+        display: none;
+    }
+
+    .link small {
+        /*ajustar o texto dentro do botão*/
+        font-size: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE FORMULÁRIOS */
+    .formulario {
+        width: 220px;
+        margin: 20px 0 20px 10px;
+        /* Define 40px à esquerda da margem */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .formulario h2 {
+        font-size: 14px;
+        color: rgb(22, 41, 95);
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .formulario input[type="checkbox"] {
+        display: inline;
+        width: 15px;
+        /* Tamanho do checkbox */
+        height: 15px;
+        /* Tamanho do checkbox */
+        accent-color: rgb(85, 106, 167);
+        /* Cor personalizada do checkbox */
+        cursor: pointer;
+        /* Muda o cursor ao passar sobre o checkbox */
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .formulario label {
+        display: block;
+        text-align: left;
+        font-size: 10px;
+        font-weight: 500;
+        width: 80px;
+        margin-bottom: 5px;
+    }
+
+    .formulario span {
+        font-size: 12px;
+    }
+
+    .formulario input,
+    select {
+        width: calc(100% - 120px);
+        /* Ajusta para ocupar o espaço restante */
+        padding: 12px;
+        font-size: 12px;
+        color: #003;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+        border-radius: 15px;
+        background-color: #99F;
+    }
+
+    .formulario button {
+        padding: 12px;
+        color: #039;
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: #FFF;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+    }
+
+    .formulario button:hover {
+        background-color: rgba(14, 16, 107, 0.1);
+        /* Adiciona um efeito ao passar o mouse */
+    }
+
+    .formulario .form-actions {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE MENSAGENS DE ALERTA */
+    .aviso {
+        width: 60%;
+        background-color: #eee3be;
+        /* Vermelho claro */
+        color: #140303;
+        /* Vermelho escuro */
+        border-radius: 8px;
+        /* Cantos arredondados */
+        padding: 15px;
+        /* Espaçamento interno */
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra sutil */
+        animation: fadeIn 0.5s ease-in-out;
+        /* animação descrita mais abaixo */
+    }
+
+    .aviso img {
+        display: block;
+        width: 30px;
+        /* Tamanho da imagem */
+        height: 30px;
+        margin-right: 15px;
+        /* Espaçamento entre imagem e conteúdo */
+    }
+
+    .aviso h2 {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 0 5px;
+        /* Espaço abaixo do título */
+    }
+
+    .aviso p {
+        font-size: 12px;
+        margin: 0;
+        line-height: 1.5;
+        /* Melhor legibilidade */
+    }
+
+    /* Animação de entrada */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+}
+
+/* ============================ FINAL - CELULARES ============================= */
+
+
+/* ==================================================================================== */
+/* ============================= SMALL DEVICES - TABLETS ============================== */
+/* ==================================================================================== */
+
+@media screen and (min-width:481px) and (max-width:760px) {
+
+    /* ESTILIZÇÃO DO FUNDO DA ÁREA DE LOGIN */
+    .fundo_login {
+        background-image: url('../imagens/banner_fundo4.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        padding: 0 20px
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE LOGIN */
+    .login {
+        width: 40%;
+        margin-top: 8%;
+        margin-left: 30%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.815);
+        /* Sombra para destaque */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centraliza o conteúdo verticalmente */
+        padding: 20px;
+        color: white;
+    }
+
+    .login img {
+        margin-top: 10px;
+        width: 60px;
+        height: 10vh;
+    }
+
+    .login h2 {
+        font-size: 1.2em;
+        margin: 2%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login h3 {
+        font-size: 1em;
+        margin: 1%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login form {
+        margin-top: 2%;
+    }
+
+    .login input {
+        width: 65%;
+        padding: 2%;
+        font-size: 1em;
+        color: #003;
+        margin-top: 4%;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 9px 9px 9px 9px;
+        float: center;
+        background-color: #99F;
+    }
+
+    .login button {
+        padding: 2%;
+        font-size: 0.8em;
+        color: #039;
+        cursor: pointer;
+        margin-top: 4%;
+        border-radius: 9px 9px 9px 9px;
+        margin-bottom: 2%;
+        background-color: #FFF;
+    }
+
+    /* DIV PRINCIPAL CONTENDO A IMAGEM DO BANNER" */
+    .banner_principal {
+        height: 180px;
+        background-image: url('../imagens/banner_fundo4.jpg');
+        /* Caminho atualizado da imagem */
+        background-size: cover;
+        background-position: top;
+        /* Agora a imagem ficará alinhada à parte superior */
+        position: relative;
+        padding: 0 20px;
+        /* Espaçamento interno */
+    }
+
+    /* DIV INTERNA COM O TEXTO "Sala de Leitura" */
+    .texto_banner {
+        font-size: 26px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        /* Alinha à esquerda */
+        align-items: center;
+        /* Centraliza verticalmente */
+        height: 100%;
+        /* Garante que ocupe toda a altura da outer-div */
+        text-shadow:
+            1px 1px 5px rgb(153, 147, 233),
+            -1px -1px 5px rgb(153, 147, 233);
+    }
+
+    /* DIV INTERNA COM O NOME DO USUÁRIO E O NIVEL DE USUARIO" */
+    .texto2_banner {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(41, 5, 5);
+        text-align: right;
+        /* Alinha o texto à direita */
+        display: flex;
+        flex-direction: column;
+        /* Alinha os textos verticalmente */
+        justify-content: center;
+        /* Centraliza verticalmente */
+        position: absolute;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 0;
+        height: 100%;
+        text-shadow:
+            1px 1px 5px rgb(255, 255, 255),
+            -1px -1px 5px rgb(255, 255, 255);
+    }
+
+    /* DIV INTERNA COM A NAVBAR -  O MENU DE LINKS DO SISTEMA*/
+    .menu {
+        height: 50px;
+        background-color: rgba(26, 35, 126, 0.7);
+        /* Azul transparente com 70% */
+        display: flex;
+        align-items: center;
+        padding: 0;
+        position: absolute;
+        /* Para posicionar dentro da outer-div */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 12px;
+    }
+
+    /* Estilo dos links como abas */
+    .menu a {
+        color: white;
+        text-decoration: none;
+        background-color: rgba(21, 27, 96, 0.9);
+        /* Azul mais escuro */
+        border-radius: 5px 5px 0 0;
+        /* Arredondado no topo para estilo de aba */
+        margin-right: 5px;
+        /* Reduz a margem para aproximar os links */
+        height: 100%;
+        /* Para preencher completamente a altura da navbar */
+        display: flex;
+        align-items: center;
+        /* Centraliza verticalmente o texto */
+        justify-content: center;
+        /* Centraliza horizontalmente o texto */
+        padding: 0 10px;
+        /* Menos espaçamento interno */
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    /* Hover e efeito de clique */
+    .menu a:hover {
+        background-color: rgba(57, 73, 171, 0.8);
+        /* Azul mais claro no hover */
+        transform: translateY(-5px);
+        /* Efeito de elevação */
+    }
+
+    .menu a:active {
+        transform: translateY(0);
+        /* Reseta ao ser clicado */
+    }
+
+    .menu img {
+        width: 30px;
+        /* Tamanho dos ícones */
+        height: 30px;
+        padding-right: 4px;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE COOKIES NO INICIO */
+    .cookie-consent {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: auto;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cookie-consent p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .cookie-consent button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .cookie-consent button:hover {
+        background-color: #45a049;
+    }
+
+    /* FORMATAÇÃO DE TABELAS */
+    .lista {
+        margin-top: 15px;
+        margin-left: 25px;
+        font-size: 14px;
+    }
+
+    .lista table,
+    th,
+    td {
+        border: 0px;
+        border-collapse: collapse;
+    }
+
+    .lista td {
+        padding-right: 20px;
+    }
+
+    .lista tr:hover {
+        background-color: coral;
+    }
+
+    .lista tr:nth-child(even) {
+        background-color: #DCEBE6
+    }
+
+    .lista tr:hover:nth-child(1n + 2) {
+        background-color: #085F63;
+        color: #fff
+    }
+
+    .lista span {
+        /*este item é para organizar os textos da direita, a-aluno, p-professor,g-gestor*/
+        font-size: 10px;
+        font-weight: bold;
+        color: rgb(255, 4, 46);
+        text-align: right;
+        /* Alinha o texto à direita */
+        position: fixed;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 190px;
+    }
+
+    .lista img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+    }
+
+    .lista input {
+        /* caixa de busca no banco de dados */
+        width: 100px;
+        margin-right: 15px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #eec0ae;
+        /* Cor de fundo */
+        color: rgb(0, 0, 0);
+        /* Cor do texto */
+        padding: 5px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 14px;
+        /* Tamanho do texto */
+        text-align: left;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    /*LINKS COM FORMATO DE BOTOES ALEATORIOS*/
+    .link {
+        margin-right: 5px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #1c426b;
+        /* Cor de fundo */
+        color: white;
+        /* Cor do texto */
+        padding: 5px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 12px;
+        /* Tamanho do texto */
+        text-align: center;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    .link:hover {
+        background-color: #73a1d3;
+        /* Cor ao passar o mouse */
+    }
+
+    .link img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+    }
+
+    .link small {
+        /*ajustar o texto dentro do botão*/
+        font-size: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE FORMULÁRIOS */
+    .formulario {
+        width: 350px;
+        margin: 20px 0 20px 40px;
+        /* Define 40px à esquerda da margem */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .formulario h2 {
+        font-size: 1.3em;
+        color: rgb(22, 41, 95);
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .formulario input[type="checkbox"] {
+        display: inline;
+        width: 20px;
+        /* Tamanho do checkbox */
+        height: 20px;
+        /* Tamanho do checkbox */
+        accent-color: rgb(85, 106, 167);
+        /* Cor personalizada do checkbox */
+        cursor: pointer;
+        /* Muda o cursor ao passar sobre o checkbox */
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .formulario label {
+        display: block;
+        text-align: left;
+        font-size: 1em;
+        font-weight: 500;
+        width: 100px;
+        margin-bottom: 5px;
+    }
+
+    .formulario span {
+        font-size: 15px;
+    }
+
+    .formulario input,
+    select {
+        width: calc(100% - 120px);
+        /* Ajusta para ocupar o espaço restante */
+        padding: 12px;
+        font-size: 1em;
+        color: #003;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+        border-radius: 15px;
+        background-color: #99F;
+    }
+
+    .formulario button {
+        padding: 12px 20px;
+        color: #039;
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: #FFF;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+    }
+
+    .formulario button:hover {
+        background-color: rgba(14, 16, 107, 0.1);
+        /* Adiciona um efeito ao passar o mouse */
+    }
+
+    .formulario .form-actions {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE MENSAGENS DE ALERTA */
+    .aviso {
+        width: 60%;
+        background-color: #eee3be;
+        /* Vermelho claro */
+        color: #140303;
+        /* Vermelho escuro */
+        border-radius: 8px;
+        /* Cantos arredondados */
+        padding: 15px;
+        /* Espaçamento interno */
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra sutil */
+        animation: fadeIn 0.5s ease-in-out;
+        /* animação descrita mais abaixo */
+    }
+
+    .aviso img {
+        display: block;
+        width: 40px;
+        /* Tamanho da imagem */
+        height: 40px;
+        margin-right: 15px;
+        /* Espaçamento entre imagem e conteúdo */
+    }
+
+    .aviso h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 5px;
+        /* Espaço abaixo do título */
+    }
+
+    .aviso p {
+        font-size: 15px;
+        margin: 0;
+        line-height: 1.5;
+        /* Melhor legibilidade */
+    }
+
+    /* Animação de entrada */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+}
+
+/* ============================= FINAL - TABLETS ============================== */
+
+
+/* ==================================================================================== */
+/* ===================== MEDIUM DEVICES - COMPUTADORES======================= */
+/* ==================================================================================== */
+
+@media screen and (min-width: 761px) {
+
+    /* ESTILIZÇÃO DO FUNDO DA ÁREA DE LOGIN */
+    .fundo_login {
+        background-image: url('../imagens/banner_fundo4.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        padding: 0 20px
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE LOGIN */
+    .login {
+        width: 25%;
+        margin-top: 8%;
+        margin-left: 35%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.815);
+        /* Sombra para destaque */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centraliza o conteúdo verticalmente */
+        padding: 20px;
+        color: white;
+    }
+
+    .login img {
+        margin-top: 10px;
+        width: 70px;
+        height: 11vh;
+    }
+
+    .login h2 {
+        font-size: 1.3em;
+        margin: 2%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login h3 {
+        font-size: 1em;
+        margin: 1%;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        text-shadow: 2px -2px 10px rgb(255, 255, 255);
+    }
+
+    .login form {
+        margin-top: 2%;
+    }
+
+    .login input {
+        width: 70%;
+        padding: 2%;
+        font-size: 1.3em;
+        color: #003;
+        margin-top: 4%;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 9px 9px 9px 9px;
+        float: center;
+        background-color: #99F;
+    }
+
+    .login button {
+        padding: 3%;
+        font-size: 0.8em;
+        color: #039;
+        cursor: pointer;
+        margin-top: 4%;
+        border-radius: 9px 9px 9px 9px;
+        margin-bottom: 3%;
+        background-color: #FFF;
+    }
+
+
+    /* DIV PRINCIPAL CONTENDO A IMAGEM DO BANNER" */
+    .banner_principal {
+        height: 180px;
+        background-image: url('../imagens/banner_fundo4.jpg');
+        /* Caminho atualizado da imagem */
+        background-size: cover;
+        background-position: top;
+        /* Agora a imagem ficará alinhada à parte superior */
+        position: relative;
+        padding: 0 20px;
+        /* Espaçamento interno */
+    }
+
+    /* DIV INTERNA COM O TEXTO "Sala de Leitura" */
+    .texto_banner {
+        font-size: 36px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        /* Alinha à esquerda */
+        align-items: center;
+        /* Centraliza verticalmente */
+        height: 100%;
+        /* Garante que ocupe toda a altura da outer-div */
+        text-shadow:
+            1px 1px 5px rgb(153, 147, 233),
+            -1px -1px 5px rgb(153, 147, 233);
+    }
+
+    /* DIV INTERNA COM O NOME DO USUÁRIO E O NIVEL DE USUARIO" */
+    .texto2_banner {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(41, 5, 5);
+        text-align: right;
+        /* Alinha o texto à direita */
+        display: flex;
+        flex-direction: column;
+        /* Alinha os textos verticalmente */
+        justify-content: center;
+        /* Centraliza verticalmente */
+        position: absolute;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 0;
+        height: 100%;
+        text-shadow:
+            1px 1px 5px rgb(255, 255, 255),
+            -1px -1px 5px rgb(255, 255, 255);
+    }
+
+    /* DIV INTERNA COM A NAVBAR -  O MENU DE LINKS DO SISTEMA*/
+    .menu {
+        height: 50px;
+        background-color: rgba(26, 35, 126, 0.7);
+        /* Azul transparente com 70% */
+        display: flex;
+        align-items: center;
+        padding: 0;
+        position: absolute;
+        /* Para posicionar dentro da outer-div */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 16px;
+    }
+
+    /* Estilo dos links como abas */
+    .menu a {
+        color: white;
+        text-decoration: none;
+        background-color: rgba(21, 27, 96, 0.9);
+        /* Azul mais escuro */
+        border-radius: 5px 5px 0 0;
+        /* Arredondado no topo para estilo de aba */
+        margin-right: 5px;
+        /* Reduzi a margem para aproximar os links */
+        height: 100%;
+        /* Para preencher completamente a altura da navbar */
+        display: flex;
+        align-items: center;
+        /* Centraliza verticalmente o texto */
+        justify-content: center;
+        /* Centraliza horizontalmente o texto */
+        padding: 0 15px;
+        /* Menos espaçamento interno */
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    /* Hover e efeito de clique */
+    .menu a:hover {
+        background-color: rgba(57, 73, 171, 0.8);
+        /* Azul mais claro no hover */
+        transform: translateY(-5px);
+        /* Efeito de elevação */
+    }
+
+    .menu a:active {
+        transform: translateY(0);
+        /* Reseta ao ser clicado */
+    }
+
+    .menu img {
+        width: 50px;
+        /* Tamanho dos ícones */
+        height: 50px;
+        padding-right: 4px;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE COOKIES NO INICIO */
+    .cookie-consent {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 40%;
+        height: auto;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cookie-consent p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .cookie-consent button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .cookie-consent button:hover {
+        background-color: #45a049;
+    }
+
+    /* FORMATAÇÃO DE TABELAS */
+    .lista {
+        margin-top: 15px;
+        margin-left: 25px;
+        font-size: 18px;
+    }
+
+    .lista table,
+    th,
+    td {
+        border: 0px;
+        border-collapse: collapse;
+    }
+
+    .lista td {
+        padding-right: 30px;
+    }
+
+    .lista tr:hover {
+        background-color: coral;
+    }
+
+    .lista tr:nth-child(even) {
+        background-color: #DCEBE6
+    }
+
+    .lista tr:hover:nth-child(1n + 2) {
+        background-color: #085F63;
+        color: #fff
+    }
+
+    .lista span {
+        /*este item é para organizar os textos da direita, a-aluno, p-professor,g-gestor*/
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(255, 4, 46);
+        text-align: right;
+        /* Alinha o texto à direita */
+        position: fixed;
+        right: 20px;
+        /* Ajuste conforme necessário */
+        top: 190px;
+    }
+
+    .lista img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+    }
+
+    .lista input {
+        margin-right: 15px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #eec0ae;
+        /* Cor de fundo */
+        color: rgb(0, 0, 0);
+        /* Cor do texto */
+        padding: 10px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 16px;
+        /* Tamanho do texto */
+        text-align: left;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    /*LINKS COM FORMATO DE BOTOES ALEATORIOS*/
+    .link {
+        margin-right: 15px;
+        display: inline-block;
+        /* Garante que o link se comporte como um botão */
+        background-color: #1c426b;
+        /* Cor de fundo */
+        color: white;
+        /* Cor do texto */
+        padding: 10px;
+        /* Espaçamento interno (topo/inferior e laterais) */
+        font-size: 16px;
+        /* Tamanho do texto */
+        text-align: center;
+        /* Centraliza o texto */
+        text-decoration: none;
+        /* Remove o sublinhado padrão do link */
+        border-radius: 5px;
+        /* Bordas arredondadas */
+        border: none;
+        /* Remove borda */
+        cursor: pointer;
+        /* Mostra o ícone de "mãozinha" ao passar o mouse */
+        transition: background-color 0.3s;
+        /* Animação para efeito hover */
+    }
+
+    .link:hover {
+        background-color: #73a1d3;
+        /* Cor ao passar o mouse */
+    }
+
+    .link img {
+        width: 20px;
+        /* Tamanho dos ícones */
+        height: 20px;
+        padding-right: 4px;
+    }
+
+    .link small {
+        /*ajustar o texto dentro do botão*/
+        font-size: 18px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE FORMULÁRIOS */
+    .formulario {
+        width: 400px;
+        margin: 20px 0 20px 40px;
+        /* Define 40px à esquerda da margem */
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .formulario form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .formulario h2 {
+        font-size: 1.5em;
+        color: rgb(22, 41, 95);
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .formulario input[type="checkbox"] {
+        display: inline;
+        width: 20px;
+        /* Tamanho do checkbox */
+        height: 20px;
+        /* Tamanho do checkbox */
+        accent-color: rgb(85, 106, 167);
+        /* Cor personalizada do checkbox */
+        cursor: pointer;
+        /* Muda o cursor ao passar sobre o checkbox */
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .formulario label {
+        display: block;
+        text-align: left;
+        font-size: 1em;
+        font-weight: 500;
+        width: 100px;
+        margin-bottom: 3px;
+    }
+
+    .formulario span {
+        font-size: 16px;
+    }
+
+    .formulario input,
+    select {
+        width: calc(100% - 120px);
+        /* Ajusta para ocupar o espaço restante */
+        padding: 10px;
+        font-size: 1em;
+        color: #003;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+        border-radius: 15px;
+        background-color: #99F;
+    }
+
+    .formulario button {
+        padding: 12px 20px;
+        color: #039;
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: #FFF;
+        border: 1px solid rgba(14, 16, 107, 0.3);
+    }
+
+    .formulario button:hover {
+        background-color: rgba(14, 16, 107, 0.1);
+        /* Adiciona um efeito ao passar o mouse */
+    }
+
+    .formulario .form-actions {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* ESTILIZÇÃO DA ÁREA DE MENSAGENS DE ALERTA */
+    .aviso {
+        width: 40%;
+        background-color: #eee3be;
+        /* Vermelho claro */
+        color: #140303;
+        /* Vermelho escuro */
+        border-radius: 8px;
+        /* Cantos arredondados */
+        padding: 15px;
+        /* Espaçamento interno */
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra sutil */
+        animation: fadeIn 0.5s ease-in-out;
+        /* animação descrita mais abaixo */
+    }
+
+    .aviso img {
+        display: block;
+        width: 50px;
+        /* Tamanho da imagem */
+        height: 50px;
+        margin-right: 15px;
+        /* Espaçamento entre imagem e conteúdo */
+    }
+
+    .aviso h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0 0 5px;
+        /* Espaço abaixo do título */
+    }
+
+    .aviso p {
+        font-size: 18px;
+        margin: 0;
+        line-height: 1.5;
+        /* Melhor legibilidade */
+    }
+
+    /* Animação de entrada */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .search-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        y
+    }
+
+    #userDropdown {
+        position: absolute;
+        width: 100%;
+        background: white;
+        border: 1px solid #ccc;
+        max-height: 200px;
+        overflow-y: auto;
+        display: none;
+        z-index: 1000;
+    }
+
+    #userDropdown div {
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #userDropdown div:hover {
+        background-color: #f1f1f1;
+    }
+
+
+}
+
+/* ===================== FINAL - COMPUTADORES======================= */
