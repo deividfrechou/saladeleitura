@@ -46,7 +46,7 @@ session_start();
            include ("conecta.php");
 
            $v_id = $_SESSION['logado'];
-           $query = mysqli_query($conexao, "SELECT * FROM usuarios WHERE id = $v_id") or die(mysqli_error($conexao));
+           $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE id = $v_id") or die(mysqli_error($conexao));
            $row = mysqli_fetch_array($query);
            echo "<div>" . $row['nome_user'] . "</div>";
 
@@ -75,25 +75,25 @@ session_start();
 //conecta e seleciona banco
 include ("conecta.php");
 
-$v_livro = $_GET['codigo'];
-$stmt = $conexao->prepare("DELETE FROM livros WHERE id = ?");
-$stmt->bind_param("i", $v_livro);  //explicação acima
+$v_emprestimo = $_GET['codigo'];
+$stmt = $conexao->prepare("DELETE FROM emprestimos WHERE id = ?");
+$stmt->bind_param("i", $v_emprestimo); 
 $stmt->execute();
 
 if ($stmt->execute()) {
     echo "<div class='aviso'>";
     echo "<img src='./imagens/alerta_ok.png'>";
-    echo "<h2>Registro excluido com sucesso</h2>";
+    echo "<h2>Livro devolvido.<br>pegue outro livro e comece a ler de novo!</h2>";
     echo "<p>Aguarde o retorno automaticamente</p>";
     echo "</div>";
-    header("Refresh: 2; url=livros.php");
+    header("Refresh: 2; url=inicio.php");
 } else {
     echo "<div class='aviso'>";
     echo "<img src='./imagens/alerta_erro.png'>";
     echo "<h2>Erro ao deletar este livro</h2>";
     echo "<p>".$conexao->error."</p>";
     echo "</div>";
-    header("Refresh: 2; url=livros.php");
+    header("Refresh: 2; url=inicio.php");
 }
 
 ?>

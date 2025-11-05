@@ -147,8 +147,8 @@ session_start();
         }
 
         .card-actions img {
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 34px;
             transition: transform 0.2s;
         }
 
@@ -282,10 +282,9 @@ echo "</div>";
             echo "</div>";
             
             // Ações
-            echo "<div class='card-actions'>";
-            echo "<a href='emprestimo_consultar.php?codigo=" . $aux['id'] . "' title='Consultar'><img src='./imagens/livro_consultar.png'></a>";
-            echo "<a href='emprestimo_editar1.php?codigo=" . $aux['id'] . "' title='Editar'><img src='./imagens/livro_editar.png'></a>";
-            echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Excluir'><img src='./imagens/livro_excluir.png'></a>";
+            echo "<div class='card-actions'>";            
+            echo "<a href='emprestimo_editar1.php?codigo=" . $aux['id'] . "' title='Editar'><img src='./imagens/emprestimo_renovar2.png'></a>";
+            echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Excluir'><img src='./imagens/emprestimo_devolver2.png'></a>";
             echo "</div>";
             
             echo "</div>"; // Fecha card
@@ -327,8 +326,8 @@ $(document).ready(function() {
 });
 
 function confirmarExclusao(id) {
-    if (confirm('Deseja realmente excluir este empréstimo?')) {
-        window.location.href = 'emprestimo_excluir.php?codigo=' + id;
+    if (confirm('Deseja devolver este livro?')) {
+        window.location.href = 'emprestimo_devolver.php?codigo=' + id;
     }
 }
 
