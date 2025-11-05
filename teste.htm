@@ -9,35 +9,6 @@
     </style>
 </head>
 <body>
-    <form id="registrationForm">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <label for="confirmPassword">Confirmar Senha:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-        <br><br>
-        <span id="errorMessage" class="error"></span>
-        <br>
-        <button type="submit">Registrar</button>
-    </form>
-
-    <script>
-        const form = document.getElementById('registrationForm');
-        const password = document.getElementById('password');
-        const confirmPassword = document.getElementById('confirmPassword');
-        const errorMessage = document.getElementById('errorMessage');
-
-        form.addEventListener('submit', function(event) {
-            // Reseta a mensagem de erro
-            errorMessage.textContent = '';
-
-            // Verifica se as senhas são iguais
-            if (password.value !== confirmPassword.value) {
-                event.preventDefault(); // Impede o envio do formulário
-                errorMessage.textContent = 'As senhas não coincidem.';
-                confirmPassword.focus(); // Coloca o foco no campo de confirmação
-            }
-        });
-    </script>
+   teste de versionamento de github
 </body>
 </html>
