@@ -283,8 +283,8 @@ echo "</div>";
             
             // Ações
             echo "<div class='card-actions'>";            
-            echo "<a href='emprestimo_editar1.php?codigo=" . $aux['id'] . "' title='Editar'><img src='./imagens/emprestimo_renovar2.png'></a>";
-            echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Excluir'><img src='./imagens/emprestimo_devolver2.png'></a>";
+            echo "<a href='emprestimo_prorrogar.php?codigo=" . $aux['id'] . "' title='Prorrogar'><img src='./imagens/emprestimo_renovar2.png'></a>";
+            echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Devolver'><img src='./imagens/emprestimo_devolver2.png'></a>";
             echo "</div>";
             
             echo "</div>"; // Fecha card
