@@ -311,7 +311,7 @@ $(document).ready(function() {
         
         $.ajax({
             // URL MANTIDA: Este arquivo será o handler para a busca de Empréstimos ATIVOS
-            url: 'buscar_emprestimo.php', 
+            url: 'buscar_emprestimo.php',
             method: 'GET',
             data: {
                 query: searchValue,

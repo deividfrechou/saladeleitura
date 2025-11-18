@@ -10,11 +10,11 @@ if (!in_array($searchType, $allowedTypes)) {
     $searchType = 'nome_usuario';
 }
 
-// Construir query - MODIFICAÇÃO: Buscar APENAS empréstimos ATIVOS (não devolvidos)
+// Construir query - Buscar APENAS empréstimos DEVOLVIDOS
 if (!empty($searchQuery)) {
-    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao != 'DEVOLVIDO' AND $searchType LIKE '%$searchQuery%' ORDER BY id DESC") or die(mysqli_error($conexao));
+    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao = 'DEVOLVIDO' AND $searchType LIKE '%$searchQuery%' ORDER BY id DESC") or die(mysqli_error($conexao));
 } else {
-    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao != 'DEVOLVIDO' ORDER BY id DESC") or die(mysqli_error($conexao));
+    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao = 'DEVOLVIDO' ORDER BY id DESC") or die(mysqli_error($conexao));
 }
 
 // Incluir o CSS dos cards inline para funcionar no AJAX
@@ -132,7 +132,7 @@ echo "<style>
     .card-actions {
         display: flex;
         gap: 8px;
-        justify-content: flex-end;
+        justify-content: center;
         margin-top: 10px;
         padding-top: 10px;
         border-top: 1px solid #f0f0f0;
@@ -173,7 +173,7 @@ if (mysqli_num_rows($query) > 0) {
     while ($aux = mysqli_fetch_array($query)) {
         // Formatar datas
         $data_emp = date('d/m/Y', strtotime($aux["data_emprestimo"]));
-        $data_dev = $aux["data_devolucao"] ? date('d/m/Y', strtotime($aux["data_devolucao"])) : "Não devolvido";
+        $data_dev = $aux["data_devolucao"] ? date('d/m/Y', strtotime($aux["data_devolucao"])) : "N/A";
         
         // Definir classe de status
         $status_lower = strtolower($aux["status_devolucao"]);
@@ -213,17 +213,11 @@ if (mysqli_num_rows($query) > 0) {
         
         echo "</div>";
         
-        // Ações - MANTENDO AS MESMAS AÇÕES DO inicio.php
-        echo "<div class='card-actions'>";            
-        echo "<a href='emprestimo_prorrogar.php?codigo=" . $aux['id'] . "' title='Renovar'><img src='./imagens/livro_renovar.png'></a>";
-        echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Devolver'><img src='./imagens/livro_devolver2.png'></a>";
-        echo "</div>";
-        
         echo "</div>"; // Fecha card
     }
     
     echo "</div>"; // Fecha container
 } else {
-    echo "<div class='no-results'>Nenhum empréstimo ativo encontrado para a busca.</div>";
+    echo "<div class='no-results'>Nenhum livro devolvido encontrado para a busca.</div>";
 }
 ?>

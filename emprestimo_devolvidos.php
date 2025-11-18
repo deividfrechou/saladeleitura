@@ -305,7 +305,7 @@ $(document).ready(function() {
         
         $.ajax({
             // NOVO HANDLER: Este arquivo deve ser criado para lidar com a busca de Devolvidos
-            url: 'buscar_emprestimo_devolvidos.php', 
+            url: 'buscar_devolvidos.php', 
             method: 'GET',
             data: {
                 query: searchValue,
