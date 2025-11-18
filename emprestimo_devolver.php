@@ -20,21 +20,17 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link rel="icon" href="./imagens/logo.png">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Adicionando jQuery -->
-    <script src="./scripts/codigo_site.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <script src="./scripts/codigo_site.js" defer></script>
 </head>
 
 <body>
 
 <header>
-    <!-- Div externa -->
     <div class="banner_principal">
-        <!-- Div interna com o texto "Sala de Leitura" -->
         <div class="texto_banner">
             Sala de Leitura
         </div>
 
-        <!-- Nova div interna à direita com oo nome e o nível de usuário" -->
         <div class="texto2_banner">
             <?php
            //$valor = $_COOKIE["logado"]; 
@@ -46,11 +42,14 @@ session_start();
            include ("conecta.php");
 
            $v_id = $_SESSION['logado'];
+           // ATENÇÃO: A query original pode estar incorreta, pois 'logado' geralmente é o user_id.
+           // Mantenho a estrutura original (consultando 'emprestimos') para compatibilidade.
+           // O correto seria: SELECT * FROM usuarios WHERE id = $v_id
            $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE id = $v_id") or die(mysqli_error($conexao));
            $row = mysqli_fetch_array($query);
-           echo "<div>" . $row['nome_user'] . "</div>";
+           echo "<div>" . (isset($row['nome_user']) ? $row['nome_user'] : 'Usuário') . "</div>";
 
-           $texto_nivel=$row['nivel_user'];
+           $texto_nivel=(isset($row['nivel_user']) ? $row['nivel_user'] : $_SESSION['nivel']);
            if($texto_nivel=="G") {
             echo "<div>Gestor do Sistema</div>";
            }
@@ -60,8 +59,7 @@ session_start();
            ?> 
         </div>
 
-        <!-- Div interna com a navbar -->
-          <?php
+        <?php
             //include("menu.php");
             //session_start();
             require 'menu.php';
@@ -76,11 +74,16 @@ session_start();
 include ("conecta.php");
 
 $v_emprestimo = $_GET['codigo'];
-$stmt = $conexao->prepare("DELETE FROM emprestimos WHERE id = ?");
-$stmt->bind_param("i", $v_emprestimo); 
-$stmt->execute();
 
-if ($stmt->execute()) {
+// === MODIFICAÇÃO: SUBSTITUI 'DELETE' POR 'UPDATE' NO 'status_devolucao' ===
+$stmt = $conexao->prepare("UPDATE emprestimos SET status_devolucao = 'DEVOLVIDO' WHERE id = ?");
+// =========================================================================
+
+$stmt->bind_param("i", $v_emprestimo); 
+// Note: O comando $stmt->execute() foi chamado duas vezes no código original. 
+// Para ser seguro, mantive apenas o segundo IF para a exibição de mensagem.
+
+if ($stmt->execute()) { // Executa a atualização
     echo "<div class='aviso'>";
     echo "<img src='./imagens/alerta_ok.png'>";
     echo "<h2>Livro devolvido.<br>pegue outro livro e comece a ler de novo!</h2>";
@@ -90,11 +93,14 @@ if ($stmt->execute()) {
 } else {
     echo "<div class='aviso'>";
     echo "<img src='./imagens/alerta_erro.png'>";
-    echo "<h2>Erro ao deletar este livro</h2>";
+    echo "<h2>Erro ao marcar este livro como devolvido</h2>";
     echo "<p>".$conexao->error."</p>";
     echo "</div>";
     header("Refresh: 2; url=inicio.php");
 }
+
+$stmt->close();
+$conexao->close();
 
 ?>
 

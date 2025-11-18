@@ -11,7 +11,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sala de Leitura - Laura Vicuña</title>
+    <title>Sala de Leitura - Registro de Devolvidos</title>
     <meta name="Description" content="Aplicação para gestão de livros da sala de leitura">
     <meta name="keywords" content="deivid, frechou, Sala de Leitura, Laura Vicuña">
     <meta name="robots" content="index, falow">
@@ -177,7 +177,7 @@ session_start();
 <header>
     <div class="banner_principal">
         <div class="texto_banner">
-            Sala de Leitura
+            Sala de Leitura - Devolvidos
         </div>
 
         <div class="texto2_banner">
@@ -213,11 +213,9 @@ session_start();
 <body>
 
 <?PHP  
-//Botões da base superior
 echo "<div class=lista>";
 echo "<a href='JavaScript:location.reload(true)' class='link'><img src='./imagens/atualizar.png'><small>Atualizar</small></a>";
-echo "<a href='emprestimo_devolvidos.php' class='link'><img src='./imagens/livro_devolver.png'><small>Devolvidos</small></a>"; 
-echo "<a href='emprestimo_cadastrar1.php' class='link'><img src='./imagens/livro_emprestar.png'><small>Emprestar</small></a>";
+echo "<a href='inicio.php' class='link'><img src='./imagens/livro_emprestar.png'><small>Empréstimos Ativos</small></a>"; 
 
 // Search interface
 echo "<select id='searchType' style='width: 180px; margin-right: 10px'>
@@ -235,8 +233,8 @@ echo "</div>";
     <?php
     include ("conecta.php");
 
-    // MODIFICAÇÃO: Query para mostrar APENAS empréstimos ATIVOS
-    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao != 'DEVOLVIDO' ORDER BY id DESC") or die(mysqli_error($conexao));
+    // MODIFICAÇÃO: Query para mostrar APENAS empréstimos DEVOLVIDOS
+    $query = mysqli_query($conexao, "SELECT * FROM emprestimos WHERE status_devolucao = 'DEVOLVIDO' ORDER BY id DESC") or die(mysqli_error($conexao));
     
     if (mysqli_num_rows($query) > 0) {
         echo "<div class='cards-container'>";
@@ -244,7 +242,7 @@ echo "</div>";
         while ($aux = mysqli_fetch_array($query)) {
             // Formatar datas
             $data_emp = date('d/m/Y', strtotime($aux["data_emprestimo"]));
-            $data_dev = $aux["data_devolucao"] ? date('d/m/Y', strtotime($aux["data_devolucao"])) : "Não devolvido";
+            $data_dev = $aux["data_devolucao"] ? date('d/m/Y', strtotime($aux["data_devolucao"])) : "N/A";
             
             // Definir classe de status
             $status_lower = strtolower($aux["status_devolucao"]);
@@ -284,18 +282,14 @@ echo "</div>";
             
             echo "</div>";
             
-            // Ações
-            echo "<div class='card-actions'>";            
-            echo "<a href='emprestimo_prorrogar.php?codigo=" . $aux['id'] . "' title='Renovar'><img src='./imagens/livro_renovar.png'></a>";
-            echo "<a href='javascript:void(0)' onclick='confirmarExclusao(" . $aux['id'] . ")' title='Devolver'><img src='./imagens/livro_devolver2.png'></a>";
-            echo "</div>";
+            // Ações: REMOVIDAS, pois o livro já foi devolvido
             
             echo "</div>"; // Fecha card
         }
         
         echo "</div>"; // Fecha container
     } else {
-        echo "<div class='no-results'>Nenhum empréstimo ativo encontrado.</div>";
+        echo "<div class='no-results'>Nenhum livro devolvido encontrado no registro.</div>";
     }
     ?>
 </div>
@@ -310,8 +304,8 @@ $(document).ready(function() {
         console.log('Buscando:', searchType, searchValue);
         
         $.ajax({
-            // URL MANTIDA: Este arquivo será o handler para a busca de Empréstimos ATIVOS
-            url: 'buscar_emprestimo.php', 
+            // NOVO HANDLER: Este arquivo deve ser criado para lidar com a busca de Devolvidos
+            url: 'buscar_emprestimo_devolvidos.php', 
             method: 'GET',
             data: {
                 query: searchValue,
@@ -328,13 +322,6 @@ $(document).ready(function() {
         });
     });
 });
-
-function confirmarExclusao(id) {
-    if (confirm('Deseja devolver este livro?')) {
-        window.location.href = 'emprestimo_devolver.php?codigo=' + id;
-    }
-}
-
 </script>
 
 </body>

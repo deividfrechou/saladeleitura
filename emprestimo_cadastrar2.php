@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $livro_nome = $_POST['livro'];
     $data_emprestimo = $_POST['data_emprestimo'];
     $data_devolucao = $_POST['data_devolucao'];
-    $status = 'Emprestado';
+    $status = 'EMPRESTADO';
 
     // Verifica se os campos estão vazios
     if (empty($user_id) || empty($livro_id) || empty($data_emprestimo) || empty($data_devolucao)) {
