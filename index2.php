@@ -28,8 +28,6 @@ if ($total==0) {
       
      if ($_SESSION['nivel']=="A" && $_SESSION['ativo']=="S") {
         header("Location: inicio_aluno.php");
-     } elseif($_SESSION['nivel']=="U" && $_SESSION['ativo']=="S"){
-        header("Location: inicio.php");
      } elseif($_SESSION['nivel']=="G" && $_SESSION['ativo']=="S"){
         header("Location: inicio.php");
      } else{

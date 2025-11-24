@@ -82,11 +82,10 @@ $editora = $_POST['editora'];
 $edicao = $_POST['edicao'];
 $isbn = $_POST['isbn'];
 $publicado = $_POST['publicado'];
-$quantidade = $_POST['quantidade'];
 
 
-$query = "INSERT INTO livros(titulo_livro,genero_livro,autor_livro,editora_livro,edicao_livro,isbn_livro,publicacao_livro,quantidade_livro)
-VALUES ('$titulo','$genero','$autor','$editora','$edicao','$isbn','$publicado','$quantidade')";
+$query = "INSERT INTO livros(titulo_livro,genero_livro,autor_livro,editora_livro,edicao_livro,isbn_livro,publicacao_livro)
+VALUES ('$titulo','$genero','$autor','$editora','$edicao','$isbn','$publicado')";
 
 mysqli_query($conexao,$query);
 

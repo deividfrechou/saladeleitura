@@ -146,10 +146,6 @@ session_start();
         <label for="publicado">Publicação:</label>
         <input type="text" name="publicado" id="publicado" placeholder="Ano de publicação">
       </div>
-      <div class="form-group">
-        <label for="quantidade">Quantidade:</label>
-        <input type="text" name="quantidade" id="quantidade" required="required" placeholder="Quantidade de livros iguais">
-      </div>
       <div class="form-actions">
         <a href="livros.php">
           <button type="button"><i class="fas fa-arrow-alt-circle-left fa-1x"></i> Voltar</button>

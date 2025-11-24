@@ -16,6 +16,7 @@ session_start();
     <meta name="keywords" content="deivid, frechou, Sala de Leitura, Laura Vicuña">
     <meta name="robots" content="index, falow">
     <meta name="author" content="Deivid frechou">
+    <meta  http-equiv="Refresh" content="3;URL=livros.php">
     <link rel="stylesheet" type="text/css" href="./estilos/layout.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
@@ -82,9 +83,8 @@ $editora = $_GET['editora'];
 $edicao = $_GET['edicao'];
 $isbn = $_GET['isbn']; 
 $publicado = $_GET['publicado'];
-$quantidade = $_GET['quantidade']; 
 
-$query = "UPDATE livros SET titulo_livro = '".$titulo."',genero_livro = '".$genero."',autor_livro = '".$autor."', editora_livro='".$editora."' , edicao_livro='".$edicao."' ,isbn_livro = '".$isbn."' ,publicacao_livro = '".$publicado."' ,quantidade_livro = '".$quantidade."' WHERE id = '".$id."' ";
+$query = "UPDATE livros SET titulo_livro = '".$titulo."',genero_livro = '".$genero."',autor_livro = '".$autor."', editora_livro='".$editora."' , edicao_livro='".$edicao."' ,isbn_livro = '".$isbn."' ,publicacao_livro = '".$publicado."' WHERE id = '".$id."' ";
 mysqli_query($conexao,$query);
 
 echo "<div class='aviso'>";

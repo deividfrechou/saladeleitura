@@ -95,7 +95,6 @@ echo "<tr><td>Autores</td><td>".$row['autor_livro']."</td><tr>";
 echo "<tr><td>Editora</td><td>".$row['editora_livro']."</td><tr>";
 echo "<tr><td>ISBN</td><td>".$row['isbn_livro']."</td><tr>";
 echo "<tr><td>Ano publicação</td><td>".$row['publicacao_livro']."</td><tr>";
-echo "<tr><td>Quantidade</td><td>".$row['quantidade_livro']."</td><tr>";
 echo "<tr><td>Data Inclusão</td><td>".$row['data_cadastro_livro']."</td><tr>";
 echo "</table>";
 

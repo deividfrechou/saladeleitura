@@ -337,5 +337,34 @@ function confirmarExclusao(id) {
 
 </script>
 
+<footer>
+   <div class="cookie-consent" id="cookieConsent">
+    <img src="./imagens/cookie.png" width="70" height="70" align="left">
+    <p>Usamos cookies para melhorar sua experiência e oferecer conteúdo personalizado.
+        Ao continuar navegando, você concorda com nossa política de cookies.
+        Clique em 'Aceitar' para aproveitar o melhor do nosso site!.</p>
+        <button onclick="abrirNovaPagina('politica_de_cookies.htm', 500, 400)">Ler mais</button>
+        <button onclick='acceptCookies()'>Aceitar</button>
+</div>
+  </footer>
+
+<script>
+        function acceptCookies() {
+            // Hide the cookie consent message
+            document.getElementById('cookieConsent').style.display = 'none';
+
+            // Store the consent in localStorage
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        // Check if cookies were already accepted
+        window.onload = function() {
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                document.getElementById('cookieConsent').style.display = 'none';
+            }
+        };
+
+    </script>
+
 </body>
 </html>

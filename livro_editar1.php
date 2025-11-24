@@ -90,7 +90,6 @@ $editora = $row['editora_livro'];
 $edicao = $row['edicao_livro'];
 $isbn = $row['isbn_livro']; 
 $publicado = $row['publicacao_livro'];
-$quantidade = $row['quantidade_livro']; 
  
 ?>
 
@@ -173,10 +172,6 @@ $quantidade = $row['quantidade_livro'];
      <div class="form-group">
        <label for="publicado">Publicado:</label>
        <input name="publicado" type="text" id="publicado" value="<?php echo $publicado; ?>" />
-     </div>
-     <div class="form-group">
-       <label for="quantidade">Quantidade:</label>
-       <input name="quantidade" type="text" id="quantidade" value="<?php echo $quantidade; ?>" />
      </div>
 
      <div class="form-actions">

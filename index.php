@@ -28,7 +28,7 @@
       <h3>Laura Vicuña</h3>
       <form action="index2.php" method="post">
         <input type="text" name="login" id="login" size="10"  placeholder="Seu usuário"><br>
-        <input type="password" name="senha" id="senha" size="10" placeholder="Sua senha"><br>
+        <input type="password" name="senha" id="senha" size="10" placeholder="Sua senha" autocomplete="off"><br>
         <a href="usuario_cadastro_me1.php"><button type="button"><i class="fas fa-save"></i> Cadastre-se</button></a>
         <button type="submit"><i class="fas fa-key"></i> Acessar</button>
       </form>

@@ -65,8 +65,7 @@
        editora_livro VARCHAR(100),
        edicao_livro VARCHAR(50),
 	   isbn_livro VARCHAR(20) UNIQUE,
-       publicacao_livro INT,       
-       quantidade_livro INT NOT NULL,
+       publicacao_livro INT,
        data_cadastro_livro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )" 
 	or die("Error in the create table ... " . $link->connect_error);

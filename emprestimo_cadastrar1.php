@@ -135,8 +135,8 @@ $data_devolucao = date("Y-m-d", strtotime("+7 days"));
         
         <!-- Datas -->
         <?php 
-        echo "<br>Data do emprestimo:".$data_emprestimo;
-        echo "<br>Data de Devolução:".$data_devolucao;
+        echo "<br>Data do emprestimo:".date('d/m/Y', strtotime($data_emprestimo));//$data_emprestimo;
+        echo "<br>Data de Devolução:".date('d/m/Y', strtotime($data_devolucao));//$data_devolucao;
         ?>
         <input type="hidden" name="data_emprestimo" value="<?php echo $data_emprestimo; ?>">
         <input type="hidden" name="data_devolucao" value="<?php echo $data_devolucao; ?>">

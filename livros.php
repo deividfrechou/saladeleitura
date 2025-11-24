@@ -105,8 +105,8 @@ echo "<hr size=5 />";
         echo "<tr>
                 <th>ID</th>
                 <th>Livro</th>
-                <th>Autor</th>
                 <th>Gênero</th>
+                <th>Autor</th>
                 <th>Editora</th>
                 <th>Ano</th>
                 <th>Ações</th>

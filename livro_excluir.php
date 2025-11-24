@@ -83,7 +83,7 @@ $stmt->execute();
 if ($stmt->execute()) {
     echo "<div class='aviso'>";
     echo "<img src='./imagens/alerta_ok.png'>";
-    echo "<h2>Registro excluido com sucesso</h2>";
+    echo "<h2>Livro excluido com sucesso</h2>";
     echo "<p>Aguarde o retorno automaticamente</p>";
     echo "</div>";
     header("Refresh: 2; url=livros.php");
