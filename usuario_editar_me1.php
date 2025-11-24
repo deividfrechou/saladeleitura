@@ -92,19 +92,19 @@ $senha = $row['senha_user'];
      </div>
      <div class="form-group">
        <label for="nomeuser">Nome:</label>
-       <input type="text" name="nome" id="nome" required="required" placeholder="Seu nome completo" value="<?php echo $nome; ?>">
+       <input type="text" name="nome" id="nome" required="required" placeholder="Seu nome completo" value="<?php echo $nome; ?>" autocomplete="off">
      </div>
      <div class="form-group">
        <label for="telefoneuser">Telefone:</label>
-       <input type="text" name="telefone" id="telefone" required="required" pattern="[0-9]+$" placeholder="51999999999" value="<?php echo $telefone; ?>">
+       <input type="text" name="telefone" id="telefone" required="required" pattern="[0-9]+$" placeholder="51999999999" value="<?php echo $telefone; ?>" autocomplete="off">
      </div>
      <div class="form-group">
        <label for="emailuser">E-mail:</label>
-       <input type="text" name="email" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>">
+       <input type="text" name="email" id="email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>" autocomplete="off">
      </div>
      <div class="form-group">
        <label for="senhauser">Senha:</label>
-       <input type="text" name="senha" id="senha" required="required" value="<?php echo $senha; ?>">
+       <input type="text" name="senha" id="senha" required="required" value="<?php echo $senha; ?>" autocomplete="off">
      </div>
      <div class="form-actions">
        <a href="usuarios.php">

@@ -76,15 +76,15 @@ session_start();
     <form action="usuario_cadastro2.php" method="post">
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required="required" placeholder="Seu nome completo">
+        <input type="text" name="nome" id="nome" required="required" placeholder="Seu nome completo" autocomplete="off">
       </div>
       <div class="form-group">
         <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" id="telefone" required="required" pattern="[0-9]+$" placeholder="51999999999">
+        <input type="text" name="telefone" id="telefone" required="required" pattern="[0-9]+$" placeholder="51999999999" autocomplete="off">
       </div>
       <div class="form-group">
         <label for="login">E-mail:</label>
-        <input type="text" name="login" id="login" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="seu e-mail">
+        <input type="text" name="login" id="login" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="seu e-mail" autocomplete="off">
       </div>
       <div class="form-actions">
         <a href="usuarios.php">

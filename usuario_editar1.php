@@ -116,15 +116,15 @@ $telefone = $row['telefone_user'];
      </div>
      <div class="form-group">
        <label for="nome">Nome:</label>
-       <input name="nome" type="text" id="nome" value="<?php echo $nome; ?>" />
+       <input name="nome" type="text" id="nome" value="<?php echo $nome; ?>" autocomplete="off" />
      </div>
      <div class="form-group">
        <label for="email">E-mail:</label>
-       <input name="email" type="text" id="email" value="<?php echo $email; ?>" />
+       <input name="email" type="text" id="email" value="<?php echo $email; ?>" autocomplete="off"/>
      </div>
      <div class="form-group">
        <label for="telefone">Telefone:</label>
-       <input name="telefone" type="text" id="telefone" value="<?php echo $telefone; ?>" />
+       <input name="telefone" type="text" id="telefone" value="<?php echo $telefone; ?>" autocomplete="off"/>
      </div>
      <div class="form-actions">
        <a href="usuarios.php"><button type="button" ><i class="fas fa-arrow-alt-circle-left fa-1x"></i> Voltar</button></a> 
