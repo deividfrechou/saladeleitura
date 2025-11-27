@@ -85,9 +85,9 @@
 		nome_livro VARCHAR(100) NOT NULL,
         data_emprestimo date,
         data_devolucao date,
-        status_devolucao varchar(20) NOT NULL,
-        FOREIGN KEY (user_id) REFERENCES usuarios(id),
-        FOREIGN KEY (livro_id) REFERENCES livros(id)
+        status_devolucao varchar(20) NOT NULL
+        /*FOREIGN KEY (user_id) REFERENCES usuarios(id),
+        FOREIGN KEY (livro_id) REFERENCES livros(id)*/
         )" 
 	    or die("Error in the create table ... " . $link->connect_error);
 	    $result_create_table = $link->query($query_create_table);
