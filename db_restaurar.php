@@ -1,4 +1,4 @@
-<?php
+<<?php
 /**
  * Script de Restore/Upload do Banco de Dados
  * Permite fazer upload de um arquivo SQL e restaurar apenas os REGISTROS
@@ -7,7 +7,15 @@
 
 session_start();
 
-$link = new mysqli('localhost', 'root', '', '');
+// Verifica se o papel do usuário está na lista de papéis permitidos
+if ($_SESSION['nivel']=="A") {
+    header("Location: erro_sistema.php");
+    exit;
+}
+
+include ("conecta.php");
+
+$link = $conexao;
 $link->set_charset('utf8mb4');
 
 if ($link->connect_error) {
@@ -98,109 +106,107 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['arquivo_backup'])) {
     }
 }
 
-$link->close();
+$v_id = $_SESSION['logado'];
+$query = mysqli_query($link, "SELECT * FROM usuarios WHERE id = $v_id") or die(mysqli_error($link));
+$row = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restore Banco de Dados</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sala de Leitura - Laura Vicuña | Restaurar Banco de Dados</title>
+    <meta name="Description" content="Aplicação para gestão de livros da sala de leitura">
+    <meta name="keywords" content="deivid, frechou, Sala de Leitura, Laura Vicuña">
+    <meta name="robots" content="index, falow">
+    <meta name="author" content="Deivid frechou">
+    <link rel="stylesheet" type="text/css" href="./estilos/layout.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link rel="icon" href="./imagens/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scripts/codigo_site.js" defer></script>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
+        .container-restore {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            max-width: 500px;
-            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        
-        h1 {
+
+        .container-restore h1 {
             color: #333;
             margin-bottom: 10px;
-            font-size: 28px;
+            font-size: 24px;
+            font-family: 'Bitter', serif;
         }
-        
-        .subtitle {
+
+        .container-restore p {
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 14px;
         }
-        
+
         .mensagem {
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 20px;
             display: none;
         }
-        
+
         .mensagem.sucesso {
             background-color: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
             display: block;
         }
-        
+
         .mensagem.erro {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
             display: block;
         }
-        
+
         .mensagem.aviso {
             background-color: #fff3cd;
             color: #856404;
             border: 1px solid #ffeaa7;
             display: block;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
-        label {
+
+        .form-group label {
             display: block;
             margin-bottom: 8px;
             color: #333;
             font-weight: 600;
             font-size: 14px;
         }
-        
-        input[type="file"] {
+
+        .form-group input[type="file"] {
             display: block;
             width: 100%;
             padding: 12px;
-            border: 2px dashed #667eea;
+            border: 2px dashed #666;
             border-radius: 5px;
             cursor: pointer;
             background: #f9f9f9;
             transition: all 0.3s;
         }
-        
-        input[type="file"]:hover {
+
+        .form-group input[type="file"]:hover {
             background: #f0f0f0;
-            border-color: #764ba2;
+            border-color: #333;
         }
-        
+
         .info-box {
             background: #e7f3ff;
             border-left: 4px solid #2196F3;
@@ -211,24 +217,24 @@ $link->close();
             color: #0c5aa0;
             line-height: 1.6;
         }
-        
+
         .info-box strong {
             display: block;
             margin-bottom: 8px;
         }
-        
-        .info-list {
+
+        .info-box ul {
             margin-left: 15px;
         }
-        
-        .info-list li {
+
+        .info-box li {
             margin: 5px 0;
         }
-        
-        button {
+
+        .form-group button {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #333;
             color: white;
             border: none;
             border-radius: 5px;
@@ -237,40 +243,71 @@ $link->close();
             cursor: pointer;
             transition: all 0.3s;
         }
-        
-        button:hover {
+
+        .form-group button:hover {
+            background: #555;
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        button:active {
+
+        .form-group button:active {
             transform: translateY(0);
         }
-        
-        .links {
+
+        .links-restore {
             text-align: center;
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid #eee;
         }
-        
-        .links a {
-            color: #667eea;
+
+        .links-restore a {
+            color: #333;
             text-decoration: none;
             margin: 0 10px;
             font-size: 14px;
             font-weight: 600;
+            transition: color 0.3s;
         }
-        
-        .links a:hover {
+
+        .links-restore a:hover {
+            color: #666;
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>🔄 Restaurar Registros</h1>
-        <p class="subtitle">Envie um arquivo de backup SQL para restaurar dados</p>
+
+<header>
+    <div class="banner_principal">
+        <div class="texto_banner">
+            Sala de Leitura
+        </div>
+
+        <div class="texto2_banner">
+            <div><?php echo $row['nome_user']; ?></div>
+            <?php
+                $texto_nivel = $row['nivel_user'];
+                if ($texto_nivel == "G") {
+                    echo "<div>Gestor do Sistema</div>";
+                } else {
+                    echo "<div>Aluno</div>";
+                }
+            ?>
+        </div>
+
+        <?php
+            require 'menu.php';
+            echo gerarMenu();
+        ?>
+    </div>
+</header>
+
+<main>
+    <div class="container-restore">
+        <h1><i class="fas fa-database"></i> Restaurar Banco de Dados</h1>
+        <p>Envie um arquivo de backup SQL para restaurar dados</p>
         
         <?php if (!empty($mensagem)): ?>
             <div class="mensagem <?php echo $tipo_mensagem; ?>">
@@ -278,19 +315,10 @@ $link->close();
             </div>
         <?php endif; ?>
         
-        <div class="info-box">
-            <strong>ℹ️ Como funciona:</strong>
-            <ul class="info-list">
-                <li>✓ Limpa os dados existentes</li>
-                <li>✓ Restaura apenas os registros</li>
-                <li>✓ Tabelas e banco de dados mantêm intactos</li>
-                <li>✓ Preserva a estrutura do banco</li>
-            </ul>
-        </div>
-        
+
         <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="arquivo_backup">📁 Selecione o arquivo de backup:</label>
+                <label for="arquivo_backup"><i class="fas fa-file-upload"></i> Selecione o arquivo de backup:</label>
                 <input 
                     type="file" 
                     id="arquivo_backup" 
@@ -300,13 +328,21 @@ $link->close();
                 >
             </div>
             
-            <button type="submit">🔄 Restaurar Registros</button>
+            <div class="form-group">
+                <button type="submit"><i class="fas fa-sync"></i> Restaurar Registros</button>
+            </div>
         </form>
         
-        <div class="links">
-            <a href="backup.php">📥 Fazer Backup</a>
-            <a href="index.php">🏠 Ir para Início</a>
+        <div class="links-restore">
+            <a href="db_backup.php"><i class="fas fa-download"></i> Fazer Backup</a>
+            <a href="inicio.php"><i class="fas fa-home"></i> Ir para Início</a>
         </div>
     </div>
+</main>
+
 </body>
 </html>
+
+<?php
+$link->close();
+?>
