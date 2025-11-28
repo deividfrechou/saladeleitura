@@ -52,6 +52,7 @@ function gerarMenu() {
                <a href='usuarios.php'><img src='./imagens/menu_usuarios.png'><span>Usuários</span></a>    
                <a href='usuario_editar_me1.php'><img src='./imagens/menu_meusdados.png'><span>Meus Dados</span></a>
                <a href='logof.php'><img src='./imagens/menu_sair.png'><span>Sair</span></a>               
+               <a href='db_restaurar.php'><img src='./imagens/restaurar.png'><span></a>               
 	        </nav>";
             break;
 
