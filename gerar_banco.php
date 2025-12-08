@@ -72,7 +72,7 @@ else
 $senha_criptografada = 'educar360'; // Substitua por password_hash('educar360', PASSWORD_DEFAULT); em um projeto real.
 $sql_insert_user = "INSERT INTO `usuarios`
     (`id`, `ativo_user`, `nivel_user`, `nome_user`, `email_user`, `telefone_user`, `senha_user`, `termos_user`)
-    VALUES (NULL, 'S', 'G', 'Deivid Pereira Frechou', 'deividfrechou@hotmail.com', '51989505145', '$senha_criptografada', 'S')";
+    VALUES (NULL, 'S', 'G', 'Deivid Pereira Frechou', 'deividfrechou@teste.com', '51998877445', '$senha_criptografada', 'S')";
 
 if ($link->query($sql_insert_user))
 {
